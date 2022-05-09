@@ -1,128 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap"
+      rel="stylesheet"
+    />
+    <title>GifOs</title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
-    <title>Viva Peron</title>
-</head>
-
-<body>
-    <header class="header">¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas:
-        <p id="nrovisitas"></p>
+  <body>
+    <header class="header">
+      ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de
+      visitas:
+      <p id="nrovisitas"></p>
     </header>
     <section class="goBack">
-
-        <div class='arrowImg' onclick="location.href='/index.html';"><img src="/images/arrow.svg" alt="arrow"> </div>
-        <img id='logo' src="/images/gifOF_logo.png" alt="logo">
-
+      <div class="arrowImg" onclick="location.href='/index.html';">
+        <img src="./images/arrow.svg" alt="arrow" />
+      </div>
+      <img id="logo" src="./images/gifOF_logo.png" alt="logo" />
     </section>
     <section class="crearGifWindow" id="crearGifWindow">
-        <div class="window">
-            <div class="headerWindow">Crear Gifs</div>
-            <img src="/images/windowImg.png" class="windowImage" alt="window">
-            <div class="titleMakeGif">Aquí podrás crear tus propios guifos</div>
-            <article class="stepByStep">
-                Crear tu <span class="bold">gif</span> es muy fácil, graba cualquier imagen con tu cámara y obtén guifos personalizados. Los pasos para crear tu guifo son:
-                <div class="point">
-                    <span class="bold">1)</span> Dar permisos de acceso a la cámara (sólo por el tiempo de uso)</div>
-                <div class="point"><span class="bold">2)</span> Capturar tu momento guifo </div>
-                <div class="point"><span class="bold">3)</span> Revisar el momento </div>
-                <div class="point"><span class="bold">4)</span> Listo para subir y compartir! </div>
-                <div class="point">¿Queres comenzar a crear tu <span class="bold">gif</span> ahora?</div>
-            </article>
-            <div onClick='toggleCaptureWindow()' class="button" id="start">Comenzar</div>
-            <a href='/index.html' class="button" id="cancel">Cancelar</a>
+      <div class="window">
+        <div class="headerWindow">Crear Gifs</div>
+        <img src="./images/windowImg.png" class="windowImage" alt="window" />
+        <div class="titleMakeGif">Aquí podrás crear tus propios guifos</div>
+        <article class="stepByStep">
+          Crear tu <span class="bold">gif</span> es muy fácil, graba cualquier
+          imagen con tu cámara y obtén guifos personalizados. Los pasos para
+          crear tu guifo son:
+          <div class="point">
+            <span class="bold">1)</span> Dar permisos de acceso a la cámara
+            (sólo por el tiempo de uso)
+          </div>
+          <div class="point">
+            <span class="bold">2)</span> Capturar tu momento guifo
+          </div>
+          <div class="point">
+            <span class="bold">3)</span> Revisar el momento
+          </div>
+          <div class="point">
+            <span class="bold">4)</span> Listo para subir y compartir!
+          </div>
+          <div class="point">
+            ¿Queres comenzar a crear tu <span class="bold">gif</span> ahora?
+          </div>
+        </article>
+        <div onClick="toggleCaptureWindow()" class="button" id="start">
+          Comenzar
         </div>
-
+        <a href="./index.html" class="button" id="cancel">Cancelar</a>
+      </div>
     </section>
     <section class="captureVideo dontShow" id="captureVideoWindow">
-        <div class="headerWindow">
-            <div id="title"> Chequeate el maquillaje muchache</div>
-            <img onclick="reloadPage()" class="closeImage" src="/images/buttonClose.svg" alt="boton cerrar">
+      <div class="headerWindow">
+        <div id="title">Chequeate el maquillaje muchache</div>
+        <img
+          onclick="reloadPage()"
+          class="closeImage"
+          src="./images/buttonClose.svg"
+          alt="boton cerrar"
+        />
+      </div>
+      <video class="videoCapture" id="videoCapture"></video>
+      <div class="dontShow uploadConteiner" id="uploadConteiner">
+        <img class="imgGlobe" src="./images/globe_img.png" alt="mapamundi" />
+        <div class="text">Estamos tratando de subir tu gif...</div>
+        <div class="progress-bar dontShow" id="progress-bar">
+          <div class="progress-bar-square"></div>
+          <div class="progress-bar-square"></div>
+          <div class="progress-bar-square"></div>
+          <div class="progress-bar-square"></div>
+          <div class="progress-bar-square"></div>
+          <div class="progress-bar-square"></div>
+          <div class="progress-bar-square"></div>
+          <div class="progress-bar-square"></div>
+          <div class="progress-bar-square"></div>
+          <div class="progress-bar-square"></div>
+          <div class="progress-bar-square"></div>
+          <div class="progress-bar-square"></div>
+          <div class="progress-bar-square"></div>
+          <div class="progress-bar-square"></div>
+          <div class="progress-bar-square"></div>
+          <div class="progress-bar-square"></div>
+          <div class="progress-bar-square"></div>
+          <div class="progress-bar-square"></div>
+          <div class="progress-bar-square"></div>
+          <div class="progress-bar-square"></div>
         </div>
-        <video class="videoCapture" id="videoCapture"></video>
-        <div class="dontShow uploadConteiner" id="uploadConteiner">
-            <img class="imgGlobe" src="/images/globe_img.png" alt="mapamundi">
-            <div class="text">Estamos tratando de subir tu gif...</div>
-            <div class="progress-bar dontShow" id='progress-bar'>
-                <div class="progress-bar-square"></div>
-                <div class="progress-bar-square"></div>
-                <div class="progress-bar-square"></div>
-                <div class="progress-bar-square"></div>
-                <div class="progress-bar-square"></div>
-                <div class="progress-bar-square"></div>
-                <div class="progress-bar-square"></div>
-                <div class="progress-bar-square"></div>
-                <div class="progress-bar-square"></div>
-                <div class="progress-bar-square"></div>
-                <div class="progress-bar-square"></div>
-                <div class="progress-bar-square"></div>
-                <div class="progress-bar-square"></div>
-                <div class="progress-bar-square"></div>
-                <div class="progress-bar-square"></div>
-                <div class="progress-bar-square"></div>
-                <div class="progress-bar-square"></div>
-                <div class="progress-bar-square"></div>
-                <div class="progress-bar-square"></div>
-                <div class="progress-bar-square"></div>
-            </div>
-            <div class="textSmall">Tiempo restante:
-                <div class="sub">38 años</div>
-                algunos minutos
-            </div>
+        <div class="textSmall">
+          Tiempo restante:
+          <div class="sub">38 años</div>
+          algunos minutos
         </div>
-        <div class="buttonCancel dontShow" id="buttonCancel" onclick="reloadPage()">Cancelar</div>
-        <div class="dontShow uploadedPage" id="uploadedPage">
-            <img src="/images/loading.gif" alt="" id="loadedGif" class="loadedGif">
-            <div class="menuGifsUploaded">
-                <div class="text">Gif creado con exito</div>
-                <div class="button" onclick="copyGifUrlToClipboard()">Copiar Enlace Gif</div>
-                <div class="button" onclick="saveAsGif()">Descargar Gif</div>
-            </div>
-            <div class="button done" onclick="reloadPage()">LISTO</div>
+      </div>
+      <div
+        class="buttonCancel dontShow"
+        id="buttonCancel"
+        onclick="reloadPage()"
+      >
+        Cancelar
+      </div>
+      <div class="dontShow uploadedPage" id="uploadedPage">
+        <img
+          src="./images/loading.gif"
+          alt=""
+          id="loadedGif"
+          class="loadedGif"
+        />
+        <div class="menuGifsUploaded">
+          <div class="text">Gif creado con exito</div>
+          <div class="button" onclick="copyGifUrlToClipboard()">
+            Copiar Enlace Gif
+          </div>
+          <div class="button" onclick="saveAsGif()">Descargar Gif</div>
         </div>
-        <section class="videoControls" id="videoControls">
-            <div class="dontShow" id="timer"></div>
-            <div class="play dontShow" id="play-pause">></div>
-            <div class="video-control--seekbar dontShow" id='video-control--seekbar'>
-                <div class="video-control--seekbar-square" id="0"></div>
-                <div class="video-control--seekbar-square" id="1"></div>
-                <div class="video-control--seekbar-square" id="2"></div>
-                <div class="video-control--seekbar-square" id="3"></div>
-                <div class="video-control--seekbar-square" id="4"></div>
-                <div class="video-control--seekbar-square" id="5"></div>
-                <div class="video-control--seekbar-square" id="6"></div>
-                <div class="video-control--seekbar-square" id="7"></div>
-                <div class="video-control--seekbar-square" id="8"></div>
-                <div class="video-control--seekbar-square" id="9"></div>
-                <div class="video-control--seekbar-square" id="10"></div>
-                <div class="video-control--seekbar-square" id="11"></div>
-                <div class="video-control--seekbar-square" id="12"></div>
-                <div class="video-control--seekbar-square" id="13"></div>
-                <div class="video-control--seekbar-square" id="14"></div>
-                <div class="video-control--seekbar-square" id="15"></div>
-                <div class="video-control--seekbar-square" id="16"></div>
-                <div class="video-control--seekbar-square" id="17"></div>
-                <div class="video-control--seekbar-square" id="18"></div>
-                <div class="video-control--seekbar-square" id="19"></div>
-            </div>
+        <div class="button done" onclick="reloadPage()">LISTO</div>
+      </div>
+      <section class="videoControls" id="videoControls">
+        <div class="dontShow" id="timer"></div>
+        <div class="play dontShow" id="play-pause">></div>
+        <div
+          class="video-control--seekbar dontShow"
+          id="video-control--seekbar"
+        >
+          <div class="video-control--seekbar-square" id="0"></div>
+          <div class="video-control--seekbar-square" id="1"></div>
+          <div class="video-control--seekbar-square" id="2"></div>
+          <div class="video-control--seekbar-square" id="3"></div>
+          <div class="video-control--seekbar-square" id="4"></div>
+          <div class="video-control--seekbar-square" id="5"></div>
+          <div class="video-control--seekbar-square" id="6"></div>
+          <div class="video-control--seekbar-square" id="7"></div>
+          <div class="video-control--seekbar-square" id="8"></div>
+          <div class="video-control--seekbar-square" id="9"></div>
+          <div class="video-control--seekbar-square" id="10"></div>
+          <div class="video-control--seekbar-square" id="11"></div>
+          <div class="video-control--seekbar-square" id="12"></div>
+          <div class="video-control--seekbar-square" id="13"></div>
+          <div class="video-control--seekbar-square" id="14"></div>
+          <div class="video-control--seekbar-square" id="15"></div>
+          <div class="video-control--seekbar-square" id="16"></div>
+          <div class="video-control--seekbar-square" id="17"></div>
+          <div class="video-control--seekbar-square" id="18"></div>
+          <div class="video-control--seekbar-square" id="19"></div>
+        </div>
 
-            <div class="button" id="cameraButton"><img id='imgButton' src="/images/camera.svg" alt="camara"></div>
-            <div class="button" id="captureButton">Capturar</div>
-            <div onclick="repeatCaption()" class="button dontShow" id="repeateCapture">Repetir Captura</div>
-            <div onclick="uploadCaller()" class="button dontShow" id="uploadGif">Subir Gif</div>
-        </section>
+        <div class="button" id="cameraButton">
+          <img id="imgButton" src="./images/camera.svg" alt="camara" />
+        </div>
+        <div class="button" id="captureButton">Capturar</div>
+        <div
+          onclick="repeatCaption()"
+          class="button dontShow"
+          id="repeateCapture"
+        >
+          Repetir Captura
+        </div>
+        <div onclick="uploadCaller()" class="button dontShow" id="uploadGif">
+          Subir Gif
+        </div>
+      </section>
     </section>
-    <script src="/domHandler.js"></script>
-    <script src="/videoCapture.js"></script>
-    <script src="/serverhandler.js"></script>
-    <script src="/localStorageHandler.js"></script>
+    <script src="./domHandler.js"></script>
+    <script src="./videoCapture.js"></script>
+    <script src="./serverhandler.js"></script>
+    <script src="./localStorageHandler.js"></script>
     <script src="https://www.webrtc-experiment.com/EBML.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js" type="text/javascript"></script>
-</body>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js"
+      type="text/javascript"
+    ></script>
+  </body>
 </html>

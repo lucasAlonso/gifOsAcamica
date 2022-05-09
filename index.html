@@ -1,98 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap"
+      rel="stylesheet"
+    />
     <title>gifOs - la pagina mas horrible del mundo</title>
-</head>
+  </head>
 
-<body>
-    <header class="header">¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas:
-        <p id="nrovisitas"></p>
+  <body>
+    <header class="header">
+      ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de
+      visitas:
+      <p id="nrovisitas"></p>
     </header>
 
     <section class="first-block">
-        <img id='logo' src="/images/gifOF_logo.png" alt="logo" onclick="reloadPage()">
-        <div class="controls">
-            <div class="button" onclick="location.href='/upload.html';">Crear GIF</div>
-            <div class="dropdown">
-                <div onclick="showDropdown()" class="button">Elegir Tema</div>
-                <img onclick="showDropdown()" src="/images/dropdown.svg" alt="arrow" class="dropSelector button">
-                <div class="dropdownContent" id='dropdownContent'>
-                    <div onclick="turnDay()" class="day">Sailor Day</div>
-                    <div onclick="turnNight()" class="night">Sailor Night</div>
-                </div>
-            </div>
-            <div class="controlItem" onclick="openMisGifs()">
-                <span class="underline">M</span>is Gifs</div>
+      <img
+        id="logo"
+        src="./images/gifOF_logo.png"
+        alt="logo"
+        onclick="reloadPage()"
+      />
+      <div class="controls">
+        <div class="button" onclick="location.href='/upload.html';">
+          Crear GIF
         </div>
+        <div class="dropdown">
+          <div onclick="showDropdown()" class="button">Elegir Tema</div>
+          <img
+            onclick="showDropdown()"
+            src="./images/dropdown.svg"
+            alt="arrow"
+            class="dropSelector button"
+          />
+          <div class="dropdownContent" id="dropdownContent">
+            <div onclick="turnDay()" class="day">Sailor Day</div>
+            <div onclick="turnNight()" class="night">Sailor Night</div>
+          </div>
+        </div>
+        <div class="controlItem" onclick="openMisGifs()">
+          <span class="underline">M</span>is Gifs
+        </div>
+      </div>
     </section>
     <div id="startPage">
-        <section class="search">
-            <div class="searchBar">
-                <div class="title"> Buscar</div>
-                <input placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" type="text" class="searchInput" id="searchBarInput">
-                <button onClick=searchFromTenor() id="btnSearch" class="searchButton"><img src="/images/lupa_inactive.svg" alt="lupa inactiva"  id="lupa">  Buscar</button>
+      <section class="search">
+        <div class="searchBar">
+          <div class="title">Buscar</div>
+          <input
+            placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"
+            type="text"
+            class="searchInput"
+            id="searchBarInput"
+          />
+          <button
+            onClick="searchFromTenor()"
+            id="btnSearch"
+            class="searchButton"
+          >
+            <img
+              src="./images/lupa_inactive.svg"
+              alt="lupa inactiva"
+              id="lupa"
+            />
+            Buscar
+          </button>
+        </div>
+        <div id="searchSuggestionCont" class="dontShow">
+          <div class="suggestion"></div>
+          <div class="suggestion"></div>
+          <div class="suggestion"></div>
+        </div>
+        <div class="termSearchedConteiner" id="termCont"></div>
+      </section>
+      <section id="welcomeSection">
+        <div class="separator">Hoy te sugerimos</div>
+        <section id="imgsRandomResult" class="imgsRandomResult">
+          <div class="randomCont">
+            <div class="title">
+              <div class="textInRandCont">#Loading</div>
+              <img
+                src="./images/button3.svg"
+                alt="close"
+                onclick="replaceRandom(0)"
+                class="btnClose"
+              />
             </div>
-            <div id='searchSuggestionCont' class="dontShow">
-                <div class="suggestion"></div>
-                <div class="suggestion"></div>
-                <div class="suggestion"></div>
+            <img src="./images/loading.gif" alt="loading" class="randomImg" />
+            <div class="verMasBtn" onclick="searchFromTenorVerMas(0)">
+              Ver mas ...
             </div>
-            <div class="termSearchedConteiner" id="termCont"></div>
+          </div>
+          <div class="randomCont">
+            <div class="title">
+              <div class="textInRandCont">#Loading</div>
+              <img
+                src="./images/button3.svg"
+                alt="close"
+                onclick="replaceRandom(1)"
+                class="btnClose"
+              />
+            </div>
+            <img src="./images/loading.gif" alt="loading" class="randomImg" />
+            <div class="verMasBtn" onclick="searchFromTenorVerMas(1)">
+              Ver mas ...
+            </div>
+          </div>
+          <div class="randomCont">
+            <div class="title">
+              <div class="textInRandCont">#Loading</div>
+              <img
+                src="./images/button3.svg"
+                alt="close"
+                onclick="replaceRandom(2)"
+                class="btnClose"
+              />
+            </div>
+            <img src="./images/loading.gif" alt="loading" class="randomImg" />
+            <div class="verMasBtn" onclick="searchFromTenorVerMas(2)">
+              Ver mas ...
+            </div>
+          </div>
+          <div class="randomCont">
+            <div class="title">
+              <div class="textInRandCont">#Loading</div>
+              <img
+                src=".images/button3.svg"
+                alt="close"
+                onclick="replaceRandom(3)"
+                class="btnClose"
+              />
+            </div>
+            <img src="./images/loading.gif" alt="loading" class="randomImg" />
+            <div class="verMasBtn" onclick="searchFromTenorVerMas(3)">
+              Ver mas ...
+            </div>
+          </div>
         </section>
-        <section id="welcomeSection">
-            <div class="separator">Hoy te sugerimos</div>
-            <section id="imgsRandomResult" class='imgsRandomResult'>
-                <div class="randomCont">
-                    <div class="title">
-                        <div class="textInRandCont">#Loading</div>
-                        <img src="/images/button3.svg" alt="close" onclick='replaceRandom(0)' class="btnClose">
-                    </div>
-                    <img src="/images/loading.gif" alt="loading" class="randomImg">
-                    <div class="verMasBtn" onclick='searchFromTenorVerMas(0)'>Ver mas ...</div>
-                </div>
-                <div class="randomCont">
-                    <div class="title">
-                        <div class="textInRandCont">#Loading</div>
-                        <img src="/images/button3.svg" alt="close" onclick='replaceRandom(1)' class="btnClose">
-                    </div>
-                    <img src="/images/loading.gif" alt="loading" class="randomImg">
-                    <div class="verMasBtn" onclick='searchFromTenorVerMas(1)'>Ver mas ...</div>
-                </div>
-                <div class="randomCont">
-                    <div class="title">
-                        <div class="textInRandCont">#Loading</div>
-                        <img src="/images/button3.svg" alt="close" onclick='replaceRandom(2)' class="btnClose">
-                    </div>
-                    <img src="/images/loading.gif" alt="loading" class="randomImg">
-                    <div class="verMasBtn" onclick='searchFromTenorVerMas(2)'>Ver mas ...</div>
-                </div>
-                <div class="randomCont">
-                    <div class="title">
-                        <div class="textInRandCont">#Loading</div>
-                        <img src="/images/button3.svg" alt="close" onclick='replaceRandom(3)' class="btnClose">
-                    </div>
-                    <img src="/images/loading.gif" alt="loading" class="randomImg">
-                    <div class="verMasBtn" onclick='searchFromTenorVerMas(3)'>Ver mas ...</div>
-                </div>
-            </section>
-            <div class="separator">Trending</div>
-            <section id="imgsTreandingResult" class='imgsTreandingResult'></section>
-        </section>
-        <div id="separatorSearchResult" class="separator dontShow">Search Results</div>
-        <section id="imgsSearchResult" class="imgsSearchResult dontShow"></section>
+        <div class="separator">Trending</div>
+        <section id="imgsTreandingResult" class="imgsTreandingResult"></section>
+      </section>
+      <div id="separatorSearchResult" class="separator dontShow">
+        Search Results
+      </div>
+      <section
+        id="imgsSearchResult"
+        class="imgsSearchResult dontShow"
+      ></section>
     </div>
 
-    <script src="/domHandler.js"></script>
-    <script src="/serverhandler.js"></script>
-    <script src="/localStorageHandler.js"></script>
-    <script src="/gifOs.js"></script>
-
-</body>
-
+    <script src="./domHandler.js"></script>
+    <script src="./serverhandler.js"></script>
+    <script src="./localStorageHandler.js"></script>
+    <script src="./gifOs.js"></script>
+  </body>
 </html>

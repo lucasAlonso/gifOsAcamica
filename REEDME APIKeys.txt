@@ -1,0 +1,6 @@
+LAS API KEY tienen un limite de 10 upload por dia.
+Las sieguientes apiKeys se pueden cambiar desde el archivo de js correspondiente gifOs.js y videoCapture.js
+
+XBrtyxnpwVzEstGKyX7sjMxYpQrQwCkV
+YeF5PbEyBj5aGKrMxQe5KN7QfgCl40sT
+gJMEkC3vO9M9SdVgIqASuQL8YWAHFGaB

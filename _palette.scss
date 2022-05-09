@@ -1,0 +1,48 @@
+:root {
+    --primary-color: #FFF4FD;
+    --grad1: #F7C9F3;
+    --grad2: #4180F6;
+    --font-color: white;
+    --font-color-fill: #110038;
+    --bg-color: #F7C9F3;
+    --border1: #4C2F99;
+    --border2: #979797;
+    --shadow: #997D97;
+    --shadow2: #FFFFFF;
+    --shadow3: #110038;
+    --shadow4: #284F99;
+    --search: #B4B4B4;
+    --search-bg: #E6E6E6;
+    --separator-bg: #FFFAFE;
+    --separator-border: #E6BBE2;
+    --windows-bg: #F0F0F0;
+    --windows-border: #808080;
+    --windows-shadow1: #B4B4B4;
+    --windows-shadow2: #FFFFFF;
+    --bg-color-drop-select: #CCA6C9;
+    --bg-color-onRecording: #FF6161;
+    --shadow-recording: #993A3A;
+}
+
+[data-theme="dark"] {
+    --primary-color: rgb(29, 3, 124);
+    --grad1: #EE3EFE;
+    --grad2: #2E32FB;
+    --font-color: white;
+    --font-color-fill: white;
+    --bg-color: #EE3EFE;
+    --bg-color-drop-select: #2E32FB;
+    --border1: #4C2F99;
+    --shadow: #8F8F8F;
+    --shadow2: #FFFFFF;
+    --shadow3: #110038;
+    --shadow4: #2124B3;
+    --search: #B4B4B4;
+    --search-bg: #E6E6E6;
+    --separator-bg: #FFFAFE;
+    --separator-border: #2E32FB;
+    --windows-bg: #B4B4B4;
+    --windows-border: #110038;
+    --windows-shadow1: #A72CB3;
+    --windows-shadow2: #FFFFFF;
+}
